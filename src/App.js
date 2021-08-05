@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import fetchData from './fetchData';
+import PokeList from './pokeList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { data:[], loading:true, query:null };
+  updateQuery = (event) => {
+    this.setState({ query: event.target.value });
+  };
+  handlePoke = (event) => {
+    fetchData();
+    this.setState({ pokemon: event.target.value });
+  };
+  componentDidMount = async() => {
+    const data = await fetchData();
+    this.setState({data})
+  }
+  
+  render() { 
+    const { load } = this.state;
+    return ( 
+      <>
+     <h4>Pokemon! Gotta Catch Them All!</h4>
+     {load && <h2>Please Wait</h2>}
+     {!load && (
+       <section>
+         <input onChange={this.updateQuery} type='text'></input>
+         <button onClick={fetchData}>Find</button>
+         <PokeList thing={this.state.data}/>
+       </section>
+     )}
+      </>
+     );
+  }
 }
-
+ 
 export default App;
