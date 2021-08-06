@@ -7,7 +7,7 @@ class PokeList extends Component {
         const {thing} = this.props;
         console.log(thing);
         return ( 
-            <section>
+            <section className='pokemon'>
                 {thing.map((item, index) => {
                     return <PokeItem 
                     key={index}

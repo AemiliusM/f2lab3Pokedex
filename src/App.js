@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Dropdown from './Dropdown';
+import DropdownType from './DropdownType';
 import fetchData from './fetchData';
 import PokeList from './pokeList';
 import typeOptionList from './typeOptionList';
 import './pokeStyles.css';
 
 class App extends Component {
-  state = { data:[], loading:true, query:'', direction:'asc', type:'All' };
+  state = { data:[], loading:true, query:'', direction:'asc', type:'' };
   updateQuery = (event) => {
     this.setState({ query: event.target.value });
   };
@@ -50,7 +51,7 @@ class App extends Component {
          options= {[ 'asc', 'desc']}
          thingHappen={this.handleDirection}
          />
-         <Dropdown  
+         <DropdownType  
          label='Type'
          options={typeOptionList}
          thingHappen={this.handleType}/>
