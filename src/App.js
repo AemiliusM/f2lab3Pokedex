@@ -10,11 +10,12 @@ class App extends Component {
     this.setState({ query: event.target.value });
   };
   handlePoke = async () => {
-   const results = await fetchData(this.state.query, this.state.direction);
+   const results = await fetchData(this.state.query, this.state.direction, this.state.type);
     this.setState({ data: results });
     console.log(this.state.data)
   }
   handleType = (event) => {
+    
       this.setState({ type: event.target.value });
   } 
   handleDirection = (event) => {
@@ -24,20 +25,22 @@ class App extends Component {
   componentDidMount = async() => {
     const data = await fetchData(this.state.query, this.state.direction);
     this.setState({data})
+    this.setState({loading:false})
   }
   
   render() { 
-    const { load } = this.state;
-    const filterType = this.data.filter(
-      (pokemon) => {
-        return (this.data.type_1 === 'All' || this.data.type_1 === pokemon.type_1)
-      }
-    )
-    return ( 
-      <>
+    const {data} = this.state;
+    const {loading} = this.state;
+    const filterType = data.filter(
+      (pokemon) => 
+         pokemon.typeOptionList === this.state.typeOptionList || this.state.typeOptionList === data
+      
+      )
+      return ( 
+        <>
      <h4>Pokemon! Gotta Catch Them All!</h4>
-     {load && <h2>Please Wait</h2>}
-     {!load && (
+     {loading && <h2>Please Wait</h2>}
+     {!loading && (
        <section>
          <input onChange={this.updateQuery} type='text'></input>
          <button onClick={this.handlePoke}>Find</button>
@@ -48,15 +51,15 @@ class App extends Component {
          />
          <Dropdown  
          label='Type'
-        options={typeOptionList}
-        thingHappen={this.handleType}/>
-         <PokeList thing= {this.state.data}/>
+         options={typeOptionList}
+         thingHappen={this.handleType}/>
+         <PokeList thing={filterType}/>
        </section>
      )}
       </>
      );
+    }
   }
-}
-
+  
  
 export default App;
