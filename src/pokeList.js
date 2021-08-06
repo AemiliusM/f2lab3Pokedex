@@ -5,6 +5,7 @@ class PokeList extends Component {
     state = {  }
     render() { 
         const {thing} = this.props;
+        console.log(thing);
         return ( 
             <section>
                 {thing.map((item, index) => {

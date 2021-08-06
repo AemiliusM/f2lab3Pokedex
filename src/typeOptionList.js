@@ -1,4 +1,4 @@
 const typeOptionList = [
-    'fire', 'grass', 'water', 'normal', 'bug', 'ice', 'psychic'
+   'All', 'fire', 'grass', 'water', 'normal', 'bug', 'ice', 'psychic'
 ]
 export default typeOptionList;
