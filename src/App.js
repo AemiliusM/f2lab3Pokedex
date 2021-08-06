@@ -3,6 +3,7 @@ import Dropdown from './Dropdown';
 import fetchData from './fetchData';
 import PokeList from './pokeList';
 import typeOptionList from './typeOptionList';
+import './pokeStyles.css';
 
 class App extends Component {
   state = { data:[], loading:true, query:'', direction:'asc', type:'All' };
@@ -39,7 +40,7 @@ class App extends Component {
       return ( 
         <>
      <h4>Pokemon! Gotta Catch Them All!</h4>
-     {loading && <h2>Please Wait</h2>}
+     {loading && <image url='' >Please Wait</image>}
      {!loading && (
        <section>
          <input onChange={this.updateQuery} type='text'></input>

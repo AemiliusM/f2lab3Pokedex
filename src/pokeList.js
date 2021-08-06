@@ -12,6 +12,7 @@ class PokeList extends Component {
                     return <PokeItem 
                     key={index}
                     pokemon={item.pokemon}
+                    url_image={item.url_image}
                     ability_1={item.ability_1}
                     ability_2={item.ability_2}
                     type_1={item.type_1}
