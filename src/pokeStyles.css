@@ -1,5 +1,5 @@
 img{
-    width: 150px;
+    width: 320px;
 }
 .pokemon{
     display: flex;
@@ -7,21 +7,39 @@ img{
     flex-wrap: wrap;
 }
 .pokeBox{
-    margin: 1%;
-    border: solid rgb(236, 191, 191) 2px;
-    background-image: radial-gradient:();
-
+    margin: 4% 0% 4% 1%;
+    color: rgb(220, 235, 233);
+    
 }
+.pokeBox1{
+    background: radial-gradient( ellipse at bottom, rgb(83, 2, 83),rgb(160, 64, 160),rgb(54, 136, 230),rgb(242, 200, 248), rgb(83, 2, 2),rgb(233, 9, 9), rgb(8, 8, 8), rgb(135, 99, 233), rgb(160, 64, 160));
+    position: relative;
+    border-radius: 10% 10% 0% 0%;
+}
+
+.pokeBox2{
+    background:radial-gradient(ellipse at top, rgb(243, 229, 229),rgb(29, 25, 22),rgb(216, 205, 205), rgb(29, 25, 22), rgb(235, 230, 201));
+    position: absolute;
+    background-size: contain;
+    width: 320px;
+    height: 150px;
+    border-radius: 0% 0% 10% 10%;
+    
+}
+
 .App{
     display: grid;
     grid-template-rows: min-content;
 }
+
 #root{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: radial-gradient(rgb(83, 2, 83),rgb(160, 64, 160),rgb(54, 136, 230),rgb(242, 200, 248));
+    background-size: cover;
 }
 p{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
-    font-size: large;
+    font-size:medium;
 }
