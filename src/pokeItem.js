@@ -8,11 +8,10 @@ class PokeItem extends Component {
         return ( 
             <div className='pokeBox'>
                     <div className='pokeBox1'>
-                    <p>Pokemon: {pokemon}</p>
                     <img alt={pokemon} src={url_image}/>
                 </div>
                 <div className='pokeBox2'>
-
+                    <p>Pokemon: {pokemon}</p>
                     <p>Ability1: {ability_1} Ability2: {ability_2}</p>
                     <p>Type1: {type_1} Type2: {type_2}</p>
                     <p>Stats: Attack: {attack} Defense: {defense} Speed: {speed}</p>
