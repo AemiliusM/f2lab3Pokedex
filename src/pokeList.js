@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PokeItem from './pokeItem';
+import './pokeStyles.css'
 
 class PokeList extends Component {
     state = {  }
     render() { 
         const {thing} = this.props;
-        console.log(thing);
         return ( 
             <section className='pokemon'>
                 {thing.map((item, index) => {
@@ -20,7 +20,7 @@ class PokeList extends Component {
                     attack={item.attack}
                     defense={item.defense}
                     speed={item.speed}
-
+                    id={item._id}
                     />
                 })}
             </section>
