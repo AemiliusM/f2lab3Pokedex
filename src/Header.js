@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './pokeStyles.css'
 
 class Header extends Component {
     state = {  }
     render() { 
-        return ( <h2>HI</h2> );
+        return ( <Link to={`/pokemon`}>
+            <span> Back to Search</span>
+            </Link> );
     }
 }
  

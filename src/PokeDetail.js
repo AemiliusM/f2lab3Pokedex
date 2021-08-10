@@ -16,15 +16,15 @@ class PokeDetail extends Component {
     }
 
     render() { 
-        const { data, ability_1, ability_2, type_1, type_2, attack, defense, speed } = this.state;
+        const { data } = this.state;
         return ( 
             <section>
                 <h1>{data.pokmon}</h1>
                 <div className='poke-detail'>
                     <img src={data.url_image} alt='poke-pic'/>
-                    <p>Ability1: {ability_1} Ability2: {ability_2}</p>
-                    <p>Type1: {type_1} Type2: {type_2}</p>
-                    <p>Stats: Attack: {attack} Defense: {defense} Speed: {speed}</p>
+                    <p>Ability1: {data.ability_1} Ability2: {data.ability_2}</p>
+                    <p>Type1: {data.type_1} Type2: {data.type_2}</p>
+                    <p>Stats: Attack: {data.attack} Defense: {data.defense} Speed: {data.speed}</p>
                 </div>
             </section>
          );
