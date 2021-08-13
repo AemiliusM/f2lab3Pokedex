@@ -1,6 +1,10 @@
 img{
     width: 300px;
 }
+body{
+    background: radial-gradient(rgb(83, 2, 83),rgb(160, 64, 160),rgb(54, 136, 230),rgb(242, 200, 248));
+    background-size: 100%;
+}
 .pokemon{
     display: flex;
     flex-direction: row;
@@ -9,6 +13,13 @@ img{
 }
 Header{
     margin-bottom: 10px;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .pokeBox{
     margin: 0% 0% 13% 2%;
@@ -31,7 +42,7 @@ Header{
     
 }
 
-.PokeContiner{
+.PokeContainer{
     display: grid;
     grid-template-rows: min-content;
 }
@@ -40,10 +51,27 @@ Header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: radial-gradient(rgb(83, 2, 83),rgb(160, 64, 160),rgb(54, 136, 230),rgb(242, 200, 248));
-    background-size: cover;
+    
 }
 p{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
     font-size:medium;
 }
+.loading{
+    /* transform: rotateY(360deg); */
+    animation: loading 1.2s linear infinite;
+    width: 15px;
+    justify-content: center;
+    margin-left: 50%
+
+}
+@keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
