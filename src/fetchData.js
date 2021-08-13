@@ -20,8 +20,8 @@ const fetchData = async (query, direction, type, page) => {
             //     url = url +
             // }
     let response = await fetch(url);
-    let {results} = await response.json();
-    console.log(page);
+    let results = await response.json();
+    console.log(results);
     return results;
 
 }; 

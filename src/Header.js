@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './pokeStyles.css'
 
 class Header extends Component {
     state = {  }
     render() { 
-        return ( <Link to={`/pokemon`}>
+        return ( 
+        <section className='header'>
+         <NavLink to={`/pokemon`}>
             <span> Back to Search</span>
-            </Link> );
+         </NavLink>
+            <br/>
+         <NavLink to={`/`}>
+             <span> Back to Home Page</span>
+         </NavLink> 
+        </section> ); 
     }
 }
  
